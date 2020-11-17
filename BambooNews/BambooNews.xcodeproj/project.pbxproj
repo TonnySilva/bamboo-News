@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A76D3AF2563CA9700CE8823 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D3AE2563CA9700CE8823 /* NewsManager.swift */; };
 		8A7B5B0D2562935400FA979D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5B0C2562935400FA979D /* AppDelegate.swift */; };
 		8A7B5B0F2562935400FA979D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5B0E2562935400FA979D /* SceneDelegate.swift */; };
 		8A7B5B112562935400FA979D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B5B102562935400FA979D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A76D3AE2563CA9700CE8823 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 		8A7B5B092562935400FA979D /* BambooNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BambooNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7B5B0C2562935400FA979D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A7B5B0E2562935400FA979D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		8AE6FD6A256299C500BED7B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8A76D3AE2563CA9700CE8823 /* NewsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				8AA297D125629E7B007880E3 /* ArticleSource.swift in Sources */,
 				8A7B5B112562935400FA979D /* ViewController.swift in Sources */,
 				8A917DF92562B3BB005E71D2 /* EndPoints.swift in Sources */,
+				8A76D3AF2563CA9700CE8823 /* NewsManager.swift in Sources */,
 				8A7B5B0D2562935400FA979D /* AppDelegate.swift in Sources */,
 				8A7B5B0F2562935400FA979D /* SceneDelegate.swift in Sources */,
 				8AA297CE25629C76007880E3 /* Article.swift in Sources */,
