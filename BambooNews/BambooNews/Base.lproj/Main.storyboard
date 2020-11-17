@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wye-VN-20c">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -26,32 +26,46 @@
         <!--Root View Controller-->
         <scene sceneID="zyD-EC-lxq">
             <objects>
-                <tableViewController id="QfG-1P-eQK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aE0-kk-QiJ">
+                <tableViewController id="QfG-1P-eQK" customClass="TableViewController" customModule="BambooNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aE0-kk-QiJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0zE-hA-UZc">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="0zE-hA-UZc" customClass="NewsTableViewCell" customModule="BambooNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0zE-hA-UZc" id="yd6-we-E8u">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAM-gj-Euy">
-                                            <rect key="frame" x="20" y="11.5" width="374" height="21"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfm-W8-yli">
+                                            <rect key="frame" x="10" y="0.0" width="130" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="130" id="lwC-j1-rAu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAM-gj-Euy">
+                                            <rect key="frame" x="148" y="0.0" width="246" height="80"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="eAM-gj-Euy" firstAttribute="leading" secondItem="yd6-we-E8u" secondAttribute="leadingMargin" id="8yR-9h-qEu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="eAM-gj-Euy" secondAttribute="trailing" id="iqX-Xn-jDz"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="eAM-gj-Euy" secondAttribute="bottom" id="y1k-4u-c73"/>
+                                        <constraint firstItem="eAM-gj-Euy" firstAttribute="top" secondItem="yd6-we-E8u" secondAttribute="top" id="9Ls-KJ-iZI"/>
+                                        <constraint firstItem="dfm-W8-yli" firstAttribute="leading" secondItem="yd6-we-E8u" secondAttribute="leading" constant="10" id="DhM-dz-EcJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="eAM-gj-Euy" secondAttribute="bottom" id="H4b-jO-S9H"/>
+                                        <constraint firstAttribute="bottom" secondItem="dfm-W8-yli" secondAttribute="bottom" id="KJ2-xi-dRt"/>
+                                        <constraint firstItem="eAM-gj-Euy" firstAttribute="leading" secondItem="dfm-W8-yli" secondAttribute="trailing" constant="8" id="Knp-CC-Ndq"/>
+                                        <constraint firstItem="dfm-W8-yli" firstAttribute="top" secondItem="yd6-we-E8u" secondAttribute="top" id="KyF-tS-JAh"/>
+                                        <constraint firstAttribute="trailing" secondItem="eAM-gj-Euy" secondAttribute="trailing" constant="20" id="my2-S7-4vI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageViewCell" destination="dfm-W8-yli" id="duY-kk-xMw"/>
+                                    <outlet property="labelCell" destination="eAM-gj-Euy" id="pBI-H6-dBg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

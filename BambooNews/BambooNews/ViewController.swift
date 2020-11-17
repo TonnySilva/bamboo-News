@@ -16,7 +16,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 //    topHeadlinesEndPoint()
-    newsManager.fetchHeadlines()
+    fetchHeadlines()
+    
 
   }
 //  func topHeadlinesEndPoint() {
@@ -35,7 +36,14 @@ class ViewController: UIViewController {
 //      }
 //    }
 //  }
-//
-//
 
+  private func fetchHeadlines() {
+  newsManager.fetchHeadlines(countryId: .estadosUnidos,
+                             success: { (news) in
+                              self.articles = news.articles
+                              print(news.totalResults)
+                              print(news.articles.last?.title)
+    
+  })
+  }
 }

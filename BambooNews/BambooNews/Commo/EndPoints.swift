@@ -16,3 +16,8 @@ enum EndPoints: String {
   var url: String {
     return self.rawValue }
 }
+
+enum EndPointsParameters: String {
+  case country , apiKey , category , sources , page
+  case query = "q"
+}
