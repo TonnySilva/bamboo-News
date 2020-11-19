@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  
+  
+  
   let newsManager = NewsManager()
   var articles: [Article]?
 
@@ -20,6 +23,7 @@ class ViewController: UIViewController {
     
 
   }
+//  lo paso todo a newsmanager
 //  func topHeadlinesEndPoint() {
 //
 //    let parametres = ["country":"us" , "apiKey":"ad744c6e7c234011ad5decae4f173e16"]
