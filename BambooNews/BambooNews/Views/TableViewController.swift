@@ -22,8 +22,12 @@ class TableViewController: UITableViewController {
     super.viewDidLoad()
     
     
-    //fetchHeadlines()
-    //    fetchEveryting()
+    fetchHeadlines()
+    fetchEveryting(query: "")
+    
+    fetchSource()
+    
+    fetchMovie()
   }
   
   private func fetchHeadlines() {
@@ -34,11 +38,26 @@ class TableViewController: UITableViewController {
                                 
                                })
   }
-  private func fetchEveryting(query: String) {
+  private func fetchEveryting(query: String?) {
     newsManager.fetchEverything(query: query ?? "" , succes: { (news) in
       self.articles = news.articles
       self.tableView.reloadData()
     })
+  }
+  
+  private func fetchSource() {
+    newsManager.fetchSource(succes: { (sources) in
+      debugPrint(sources)
+    })
+    
+    print("%%%lista full source%%%: \(FullSource.self)")
+  }
+  
+  private func fetchMovie() {
+    newsManager.fetchMovie(succes: { (films) in
+      print(films)
+    })
+    print("@@lista movies: \(Movie.self)")
   }
   
   
@@ -127,19 +146,19 @@ class TableViewController: UITableViewController {
   
   
 }
+//creacion de extension para crear el buscador de noticias.
 extension TableViewController: UITextFieldDelegate {
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool{
     print("searchButton \(textField.text)")
-    
-    //    newsManager.fetchEverything(query: "searchButton", succes: { (news) in
-    //      self.articles = news.articles
-    //      self.tableView.reloadData()
-    
-    fetchEveryting(query: "searchText")
+      
+      self.fetchEveryting(query: textField.text ?? "")
+//    resignfirstresponder sirve para que el teclado desaparezca cuando se acaba de escribir.
+      textField.resignFirstResponder()
+      
     return true
+    
   }
   
+  
 }
-
-

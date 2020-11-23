@@ -12,6 +12,7 @@ enum EndPoints: String {
   case topHeadlines = "https://newsapi.org/v2/top-headlines"
   case everything = "https://newsapi.org/v2/everything"
   case sources = "https://newsapi.org/v2/sources"
+  case movies = "https://private-9f06db-multitest.apiary-mock.com/movies"
   
   var url: String {
     return self.rawValue }

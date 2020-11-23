@@ -61,7 +61,30 @@ struct NewsManager {
     }
   }
   
+  func fetchSource( succes: @escaping (SourcesList) -> ()) {
+    
+    let parametres: [String: String] = [
+      EndPointsParameters.apiKey.rawValue: apiKeyValue
+    ]
+    
+    AF.request(EndPoints.sources.url , parameters: parametres).validate().responseDecodable(of: SourcesList.self) { (response) in
+      guard let sourcesList: SourcesList = response.value else {
+        return
+      }
+      print("···newsSources···: \(sourcesList)")
+      succes(sourcesList)
+    }
+  }
   
-  
-  
-}
+  func fetchMovie( succes: @escaping (Movies)-> ()) {
+    AF.request(EndPoints.movies.url).validate().responseDecodable(of: Movies.self) { (films) in
+      guard let movieList: Movies = films.value else {
+        print("@@error@@")
+        return
+      }
+      print("@@filmsMovie: \(movieList)")
+      succes(movieList)
+    }
+    }
+    
+  }
